@@ -42,14 +42,28 @@ const questions = [
 function writeToFile(fileName, data) { 
     // console.log(fileName, data)
     
-    let markup = `
-# Professional README Generator Starter Code
+let markup = `
+
 
 # ${data.title}
 
 
-# Description
+## Description
 ${data.description}
+
+## Instructions
+${data.instructions}
+
+
+## Installation
+${data.installation}
+
+## Github
+${data.github}
+
+## Contributors
+${data.contributors}
+
 
 
 
