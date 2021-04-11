@@ -22,27 +22,27 @@ const questions = [
         message: "Please enter usage instructions:"
     },
     {
-        type:"input",
-        name:"installation",
-        message:"Please enter installation instructions:"
+        type: "input",
+        name: "installation",
+        message: "Please enter installation instructions:"
     },
     {
-        type:"input",
-        name:"github",
-        message:"What is your GitHub Username?"
+        type: "input",
+        name: "github",
+        message: "What is your GitHub Username?"
     },
     {
-        type:"input",
-        name:"contributors",
-        message:"Please list your contributors"
+        type: "input",
+        name: "contributors",
+        message: "Please list your contributors"
     }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { 
+function writeToFile(fileName, data) {
     // console.log(fileName, data)
-    
-let markup = `
+
+    let markup = `
 
 
 # ${data.title}
@@ -54,7 +54,6 @@ ${data.description}
 ## Instructions
 ${data.instructions}
 
-
 ## Installation
 ${data.installation}
 
@@ -64,28 +63,29 @@ ${data.github}
 ## Contributors
 ${data.contributors}
 
-
-
-
-
-    
-    
-    
 `
 
-    fs.writeFileSync('./README.md', markup) 
+    fs.writeFileSync('./README.md', markup)
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    
+
     inquirer
-    .prompt(questions)
-    .then(response => {
-        writeToFile(response.title, response)
-        console.log(response); 
-    }); 
+        .prompt(questions)
+        .then(response => {
+            writeToFile(response.title, response)
+            console.log(response);
+        });
 };
 
 // Function call to initialize app
 init();
+
+
+
+
+
+
+
+
